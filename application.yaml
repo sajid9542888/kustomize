@@ -9,6 +9,6 @@ spec:
     server: "https://kubernetes.default.svc"
   project: default
   source:
-    path: overlays/staging
+    path: overlays/stage
     repoURL: "https://github.xxxx"
     targetRevision: kustomize
