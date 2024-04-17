@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: xx
+  labels:
+    app: axxy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app:xx
+  template:
+    metadata:
+      labels:
+        app:xx
+    spec:
+      containers:
+      - name: xx
+        image: ecr xx:latest
+        ports:
+        - containerPort: 50000
+        env:
+        - name: GATEWAY_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: api-gateway-config
+              key: GATEWAY_PORT
+       
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: axxy
+spec:
+  type: ClusterIP
+  selector:
+    app: api-gxx
+  ports:
+  - port: xx
+    targetPort: xx
