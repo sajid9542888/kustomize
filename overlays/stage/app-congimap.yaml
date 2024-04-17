@@ -1,8 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: api-gateway-config
-data:
-  PORT: "50000"
-  SERVICE_URL: xx
-  SERVICE_URL: xx
